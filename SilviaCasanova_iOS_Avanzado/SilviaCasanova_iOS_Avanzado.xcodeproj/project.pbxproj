@@ -199,19 +199,12 @@
 		6176E6302AE6D64A00B47AE0 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				61AACF3B2AE84DF20057832B /* Local */,
 				6176E6332AE6D74700B47AE0 /* Domain */,
 				6176E6322AE6D6C400B47AE0 /* Models */,
-				6176E6312AE6D6B000B47AE0 /* Local */,
 				6176E62D2AE6D62800B47AE0 /* Api */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		6176E6312AE6D6B000B47AE0 /* Local */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Local;
 			sourceTree = "<group>";
 		};
 		6176E6322AE6D6C400B47AE0 /* Models */ = {
@@ -249,6 +242,13 @@
 				61AACF382AE8325A0057832B /* CustomTableViewCell.xib */,
 			);
 			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		61AACF3B2AE84DF20057832B /* Local */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Local;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
