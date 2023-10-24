@@ -31,6 +31,7 @@
 		61AACF352AE81BBE0057832B /* HeroesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AACF342AE81BBE0057832B /* HeroesViewModel.swift */; };
 		61AACF392AE8325A0057832B /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AACF372AE8325A0057832B /* CustomTableViewCell.swift */; };
 		61AACF3A2AE8325A0057832B /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61AACF382AE8325A0057832B /* CustomTableViewCell.xib */; };
+		61AACF3E2AE8566F0057832B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 61AACF3D2AE8566F0057832B /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61AACF3E2AE8566F0057832B /* Kingfisher in Frameworks */,
 				6176E63C2AE6E1E400B47AE0 /* KeychainSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +271,7 @@
 			name = SilviaCasanova_iOS_Avanzado;
 			packageProductDependencies = (
 				6176E63B2AE6E1E400B47AE0 /* KeychainSwift */,
+				61AACF3D2AE8566F0057832B /* Kingfisher */,
 			);
 			productName = SilviaCasanova_iOS_Avanzado;
 			productReference = 6176E5EB2AE6CEB600B47AE0 /* SilviaCasanova_iOS_Avanzado.app */;
@@ -344,6 +347,7 @@
 			mainGroup = 6176E5E22AE6CEB600B47AE0;
 			packageReferences = (
 				6176E63A2AE6E1E400B47AE0 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				61AACF3C2AE8566F0057832B /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 6176E5EC2AE6CEB600B47AE0 /* Products */;
 			projectDirPath = "";
@@ -754,6 +758,14 @@
 				minimumVersion = 20.0.0;
 			};
 		};
+		61AACF3C2AE8566F0057832B /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -761,6 +773,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6176E63A2AE6E1E400B47AE0 /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
+		};
+		61AACF3D2AE8566F0057832B /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 61AACF3C2AE8566F0057832B /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 

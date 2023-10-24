@@ -6,24 +6,46 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CustomTableViewCell: UITableViewCell {
 
     
+    @IBOutlet weak var container: UIView!
     @IBOutlet weak var imageHero: UIImageView!
     @IBOutlet weak var labelHero: UILabel!
     @IBOutlet weak var descriptionHero: UITextView!
-    
+    var cellIdentifier = "CUSTOM_CELL"
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
+        container.layer.cornerRadius = 8
+               container.layer.shadowColor = UIColor.gray.cgColor
+               container.layer.shadowOffset = .zero
+               container.layer.shadowRadius = 8
+               container.layer.shadowOpacity = 0.4
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+        imageHero.layer.cornerRadius = 8
+        imageHero.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMinYCorner]
 
-        // Configure the view for the selected state
+               selectionStyle = .none
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageHero.image = nil
+        labelHero.text = nil
+        descriptionHero.text = nil
+    }
+    
+    func updateData(name: String? = nil,
+                    photo: String? = nil,
+                    decription: String? = nil) {
+        self.labelHero.text = name
+        self.descriptionHero.text = description
+        self.imageHero.kf.setImage(with: URL(string: photo ?? ""))
+        
+    }
+ 
     
 }
