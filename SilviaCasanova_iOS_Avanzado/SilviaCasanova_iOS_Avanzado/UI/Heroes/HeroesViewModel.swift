@@ -22,9 +22,16 @@ class HeroesViewModel: HeroesViewControllerDelegate {
         viewState?(.loading(true))
         
         DispatchQueue.global().async {
-            defer { viewState?(.loading(false))
-                guard let token = secureDataProvider.getToken()
+            defer { self.viewState?(.loading(false))
+                guard let token = self.secureDataProvider.getToken() else {
+                   
+                }
+                apiProvider.getHeroes(by: Hero.id,
+                                      token: token) { heroes in
+                    
+                }
+            }
+            
+            
         }
-        apiProvider.getHeroes(by: Hero.id, token: token, completion: <#T##((Heroes) -> Void)?##((Heroes) -> Void)?##(Heroes) -> Void#>)
-    }
 }
