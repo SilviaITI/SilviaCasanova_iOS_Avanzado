@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="SplashViewController" id="BYZ-38-t0r" customClass="SplashViewController" customModule="SilviaCasanova_iOS_Avanzado" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fases_de_goku_by_wallpapersdbs_dcp9hws-fullview" translatesAutoresizingMaskIntoConstraints="NO" id="vI0-qH-PcP">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X6U-dX-MJi">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="BEQ-5R-eyv">
+                                        <rect key="frame" x="186" y="634" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="color" systemColor="systemOrangeColor"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vI0-qH-PcP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Hfk-VG-Csd"/>
+                            <constraint firstItem="X6U-dX-MJi" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="NVf-2L-jpd"/>
+                            <constraint firstAttribute="bottom" secondItem="X6U-dX-MJi" secondAttribute="bottom" id="Oa5-Lp-79t"/>
+                            <constraint firstItem="X6U-dX-MJi" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Y5a-Za-fcG"/>
+                            <constraint firstAttribute="bottom" secondItem="vI0-qH-PcP" secondAttribute="bottom" id="aBn-1M-4pf"/>
+                            <constraint firstItem="vI0-qH-PcP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="m85-mz-xXR"/>
+                            <constraint firstItem="vI0-qH-PcP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vNU-9v-YJQ"/>
+                            <constraint firstItem="X6U-dX-MJi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yaj-ix-SJI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loadingView" destination="X6U-dX-MJi" id="gOu-Pq-TAQ"/>
+                        <segue destination="5Wa-Pz-yiB" kind="show" identifier="SPLASH_TO_LOGIN" id="ABA-Zk-QOj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139.69465648854961" y="-2.1126760563380285"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="4xb-Lg-9JY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="5Wa-Pz-yiB" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="qwz-Jz-Fgj"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pQs-vh-nHc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="890" y="-30"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="fases_de_goku_by_wallpapersdbs_dcp9hws-fullview" width="1024" height="1832"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="Y6W-OH-hqX" customClass="LoginViewController" customModule="SilviaCasanova_iOS_Avanzado" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="m3I-An-n2z">
+                                <rect key="frame" x="8" y="385" width="377" height="82"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6pd-d9-bb7">
+                                        <rect key="frame" x="0.0" y="0.0" width="377" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
+                                    </textField>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datos incorrectos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2g-XP-vZq">
+                                        <rect key="frame" x="0.0" y="41" width="377" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LWi-Ox-GfZ">
+                                        <rect key="frame" x="0.0" y="48" width="377" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datos incorrectos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCW-tT-oJX">
+                                        <rect key="frame" x="0.0" y="82" width="377" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TtF-hp-iAx">
+                                <rect key="frame" x="163.66666666666666" y="703.66666666666663" width="65.666666666666657" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Login"/>
+                                <connections>
+                                    <action selector="onLoginPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="77U-Gw-HtM"/>
+                                    <segue destination="ew7-Uh-tm3" kind="show" identifier="LOGIN_TO_HEROES" id="Wth-AC-1PC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dragon Ball" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyF-kR-4Wu">
+                                <rect key="frame" x="94.666666666666671" y="139" width="203.66666666666663" height="48"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="44"/>
+                                <color key="textColor" systemColor="systemOrangeColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view hidden="YES" alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ljz-MW-DA9">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="2aH-ho-FSG">
+                                        <rect key="frame" x="178" y="635" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="2aH-ho-FSG" secondAttribute="bottom" constant="180" id="5kQ-iP-Arq"/>
+                                    <constraint firstItem="2aH-ho-FSG" firstAttribute="centerX" secondItem="Ljz-MW-DA9" secondAttribute="centerX" id="9vp-XO-Xfe"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TtF-hp-iAx" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="0OR-Qd-ao7"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="m3I-An-n2z" secondAttribute="trailing" constant="8" id="En6-TO-gyc"/>
+                            <constraint firstItem="zyF-kR-4Wu" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="JKg-yR-QAq"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="TtF-hp-iAx" secondAttribute="bottom" constant="80" id="P4B-A3-vwp"/>
+                            <constraint firstItem="zyF-kR-4Wu" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="80" id="R0k-lb-6rd"/>
+                            <constraint firstItem="Ljz-MW-DA9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="THm-Ax-gAg"/>
+                            <constraint firstItem="m3I-An-n2z" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="ZCY-nX-rPY"/>
+                            <constraint firstItem="Ljz-MW-DA9" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="jHN-wM-U3U"/>
+                            <constraint firstItem="m3I-An-n2z" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="mHQ-Nn-njk"/>
+                            <constraint firstItem="Ljz-MW-DA9" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="qGG-Zv-jFC"/>
+                            <constraint firstAttribute="bottom" secondItem="Ljz-MW-DA9" secondAttribute="bottom" id="uHG-L6-TVy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailFailLabel" destination="u2g-XP-vZq" id="cSY-lg-JoC"/>
+                        <outlet property="emailTextField" destination="6pd-d9-bb7" id="dNk-pv-C5S"/>
+                        <outlet property="loader" destination="Ljz-MW-DA9" id="K0Q-Qq-Mkg"/>
+                        <outlet property="passwordFailLabel" destination="lCW-tT-oJX" id="TNb-pe-kZM"/>
+                        <outlet property="passwordTextField" destination="LWi-Ox-GfZ" id="4Go-kL-vy8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5.343511450381679" y="-2.1126760563380285"/>
+        </scene>
+        <!--Heroes-->
+        <scene sceneID="T74-CI-tHZ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Heroes" id="ew7-Uh-tm3" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="m9t-4k-XuQ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ws5-Du-Kea" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="730" y="-16"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
