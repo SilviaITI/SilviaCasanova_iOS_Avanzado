@@ -6,44 +6,62 @@
 //
 
 import UIKit
+
+// MARK: - View Protocol -
 protocol HeroesViewControllerDelegate {
     var viewState: ((HeroesViewState) -> Void)? { get set }
-    var heroCount: Int { get }
+    var heroesCount: Int { get }
+
     func onViewAppear()
-    func getHeroBy(index: Int) -> Hero?
+    func getheroBy(index: Int) -> Hero?
+    //func heroDetailViewModel(index: Int) -> HeroDetailViewControllerDelegate?
 }
+
+// MARK: - View State -
 enum HeroesViewState {
-     case loading(_ isLoading: Bool)
-    case navigateToDetail
-    case updateTable
+    case loading(_ isLoading: Bool)
+    case updateData
 }
+
+// MARK: - Class -
 class HeroesViewController: UIViewController {
-    
-    var cellIdentifier = "CUSTOM_CELL"
-    
+    // MARK: - IBOutlet -
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loader: UIView!
-    @IBOutlet weak var heroesTable: UITableView!
+
+    // MARK: - Public Properties -
+    var viewModel: HeroesViewControllerDelegate?
+
+    // MARK: - Lifecycle -
     override func viewDidLoad() {
         super.viewDidLoad()
-        heroesTable.reloadData()
         initViews()
+        setObservers()
         viewModel?.onViewAppear()
-        // Do any additional setup after loading the view.
     }
-    
-    var viewModel: HeroesViewControllerDelegate?
-    
+
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard segue.identifier == "HEROES_TO_HERO_DETAIL",
+//              let index = sender as? Int,
+//              let heroDetailViewController = segue.destination as? HeroDetailViewController,
+//              let detailViewModel = viewModel?.heroDetailViewModel(index: index) else {
+//            return
+//        }
+//
+//        heroDetailViewController.viewModel = detailViewModel
+//    }
+
+    // MARK: - Private functions -
     private func initViews() {
-        heroesTable.register(
-            UINib(nibName: "CustomTableViewCell", bundle: nil),
-            forCellReuseIdentifier: "CUSTOM_CELL"
+        tableView.register(
+            UINib(nibName: CustomTableViewCell.identifier, bundle: nil),
+            forCellReuseIdentifier: CustomTableViewCell.identifier
         )
-        
-        heroesTable.delegate = self
-        heroesTable.dataSource = self
+
+        tableView.delegate = self
+        tableView.dataSource = self
     }
-    
-   
+
     private func setObservers() {
         viewModel?.viewState = { [weak self] state in
             DispatchQueue.main.async {
@@ -51,44 +69,46 @@ class HeroesViewController: UIViewController {
                     case .loading(let isLoading):
                         self?.loader.isHidden = !isLoading
 
-                    case .updateTable:
-                    self?.heroesTable.reloadData()
-                case .navigateToDetail:
-                    print("heroes")
+                    case .updateData:
+                        self?.tableView.reloadData()
+                    
+                    print()
                 }
             }
         }
     }
-  
 }
+
 extension HeroesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel?.heroCount ?? 0
+        viewModel?.heroesCount ?? 0
     }
-    
+
+//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//        HeroCellView.estimatedHeight
+//    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CUSTOM_CELL", for: indexPath) as? CustomTableViewCell else{
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier,
+                                                       for: indexPath) as? CustomTableViewCell else {
             return UITableViewCell()
         }
-        if let hero = viewModel?.getHeroBy(index: indexPath.row) {
-            cell.updateData(name: hero.name,
-                                      photo: hero.photo,
-                                      decription: hero.description)
+
+        if let hero = viewModel?.getheroBy(index: indexPath.row) {
+            cell.updateData(
+                name: hero.name,
+                photo: hero.photo,
+                decription: hero.description
+            )
         }
+
         return cell
     }
-    
-        
-    }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "HEROES_TO_HERO_DETAIL",
+                     sender: indexPath.row)
     }
-    */
+}
 
 

@@ -36,6 +36,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setObservers()
+        
         // Do any additional setup after loading the view.
     }
   

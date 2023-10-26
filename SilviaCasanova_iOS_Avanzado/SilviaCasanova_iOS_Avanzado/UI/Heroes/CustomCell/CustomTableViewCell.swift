@@ -15,8 +15,16 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var imageHero: UIImageView!
     @IBOutlet weak var labelHero: UILabel!
     @IBOutlet weak var descriptionHero: UITextView!
-    var cellIdentifier = "CUSTOM_CELL"
+   static let identifier: String = "Custom_Cell"
     
+
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageHero.image = nil
+        labelHero.text = nil
+        descriptionHero.text = nil
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         container.layer.cornerRadius = 8
@@ -29,13 +37,6 @@ class CustomTableViewCell: UITableViewCell {
         imageHero.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMinYCorner]
 
                selectionStyle = .none
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        imageHero.image = nil
-        labelHero.text = nil
-        descriptionHero.text = nil
     }
     
     func updateData(name: String? = nil,
